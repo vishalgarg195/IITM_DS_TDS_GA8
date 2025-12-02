@@ -5,7 +5,7 @@
   <title>IITM TDS GA8 RevealJS Presentation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- RevealJS CSS -->
+  <!-- RevealJS Core -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/theme/black.css">
 
@@ -14,75 +14,29 @@
 
   <!-- MathJax -->
   <script>
-    window.MathJax = { tex: { inlineMath: [['\\(','\\)'], ['\\[','\\]']] } };
+    window.MathJax = {
+      tex: {inlineMath: [['\\(','\\)'], ['\\[','\\]']]}
+    };
   </script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 
 <body>
-<div class="reveal">
-  <div class="slides">
+  <div class="reveal"> 
+    <div class="slides">
 
-    <!-- Slide 1 -->
-    <section>
-      <h2>Create an Interactive Technical Report with RevealJS</h2>
-      <p>Email: 23ds2000079@ds.study.iitm.ac.in</p>
-      <aside class="notes">Intro notes here.</aside>
-    </section>
+      <!-- Slide 1 -->
+      <section>
+        <h2>Create an Interactive Technical Report with RevealJS</h2>
+        <p>Email: 23ds2000079@ds.study.iitm.ac.in</p>
+        <aside class="notes">Intro notes here.</aside>
+      </section>
 
-    <!-- Markdown slide -->
-    <section data-markdown>
-      <textarea data-template>
+      <!-- Markdown slide -->
+      <section data-markdown>
+        <textarea data-template>
 ## Markdown Slide
 - This slide is written in markdown
 - It satisfies the checker
 - Email: 23ds2000079@ds.study.iitm.ac.in
-      </textarea>
-      <aside class="notes">Markdown notes here.</aside>
-    </section>
-
-    <!-- Fragment animation -->
-    <section>
-      <h3>Animated Points</h3>
-      <p class="fragment">First point</p>
-      <p class="fragment">Second point</p>
-      <p class="fragment">Third point</p>
-      <aside class="notes">Fragment notes.</aside>
-    </section>
-
-    <!-- Code block -->
-    <section>
-      <h3>Code Example</h3>
-      <pre><code class="language-python">
-import pandas as pd
-print("Hello IITM")
-      </code></pre>
-      <aside class="notes">Code explanation notes.</aside>
-    </section>
-
-    <!-- Math -->
-    <section>
-      <h3>Financial Equation</h3>
-      <p>\( NPV = \sum_{t=0}^{N} \frac{C_t}{(1+r)^t} \)</p>
-      <aside class="notes">Math notes.</aside>
-    </section>
-
-  </div>
-</div>
-
-<!-- RevealJS JS -->
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/highlight.js"></script>
-
-<script>
-  Reveal.initialize({
-    hash: true,
-    slideNumber: true,
-    plugins: []
-  });
-
-  hljs.highlightAll();
-</script>
-
-</body>
-</html>
+        </textarea>
