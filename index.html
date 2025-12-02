@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Quarterly Earnings — Interactive Technical Report</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- RevealJS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/theme/black.css" id="theme">
+
+  <!-- Highlight.js for code highlighting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11/styles/default.min.css">
+
+  <!-- MathJax (for math rendering) -->
+  <script>
+    window.MathJax = {
+      tex: {inlineMath: [['\\(','\\)'], ['\\[','\\]']]},
+      svg: {fontCache: 'global'}
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+  <div class="reveal"> <!-- required by checker -->
+    <div class="slides">
+
+      <!-- Title slide -->
+      <section>
+        <h1>Create an Interactive Technical Report with RevealJS</h1>
+        <p>Quarterly Earnings Presentation — Technical Consultant</p>
+        <p><small>Contact: 23ds2000079@ds.study.iitm.ac.in</small></p>
+        <aside class="notes">
+          Welcome slide: introduce yourself, mention stakeholders and the agenda.
+        </aside>
+      </section>
+
+      <!-- Markdown slide (uses data-markdown) -->
+      <section data-markdown>
+        <textarea data-template>
+## Highlights (Markdown slide)
+
+- Revenue growth: **+8.5% QoQ**
+- Cost control measures implemented
+- Key risk: FX volatility
+
+> Prepared by: Technical Consulting Team  
+> Contact: 23ds2000079@ds.study.iitm.ac.in
+        </textarea>
+        <aside class="notes">
+          Use this slide to read the high-level bullets and call out the key decision points.
+        </aside>
+      </section>
+
+      <!-- Slide with fragments (animated items) -->
+      <section>
+        <h2>KPIs (Animated)</h2>
+        <ul>
+          <li class="fragment">Total Revenue: ₹ 1,230 Cr</li>
+          <li class="fragment">Net Income: ₹ 120 Cr</li>
+          <li class="fragment">EPS: ₹ 5.2</li>
+        </ul>
+        <aside class="notes">
+          Bring in each KPI one-by-one using fragments to focus stakeholder attention.
+        </aside>
+      </section>
+
+      <!-- Slide with code sample and syntax highlighting -->
+      <section>
+        <h2>Example: Quick Data Check (Python)</h2>
+        <pre><code class="language-python">
+# quick revenue sanity check
+import pandas as pd
+df = pd.read_csv('quarter_revenue.csv')
+print(df[['segment','revenue']].groupby('segment').sum())
+        </code></pre>
+        <aside class="notes">
+          Explain this snippet as a reproducible check to validate reported segment revenues.
+        </aside>
+      </section>
+
+      <!-- Slide with financial math (equations) -->
+      <section>
+        <h2>Financial Formula</h2>
+        <p>Net Present Value (NPV):</p>
+        <p>\[
+\mathrm{NPV} = \sum_{t=0}^{N} \frac{C_t}{(1+r)^t}
+\]</p>
+
+        <p>Weighted Average Cost of Capital (WACC):</p>
+        <p>\( \mathrm{WACC} = \frac{E}{V} r_E + \frac{D}{V} r_D (1 - T_c) \)</p>
+
+        <aside class="notes">
+          Walk through each term (cash flows \(C_t\), discount rate \(r\), and tax shield).
+        </aside>
+      </section>
+
+      <!-- Slide with mixed content and fragments & code highlight (JS) -->
+      <section>
+        <h2>Interactive Snippet (JS) — Fragmented list</h2>
+        <p class="fragment">Click to reveal the JS snippet below</p>
+        <pre><code class="language-javascript fragment">
+// Example: compute growth rate
+function growthRate(prev, curr) {
+  return ((curr - prev) / prev) * 100;
+}
+console.log(growthRate(100, 108.5)); // 8.5
+        </code></pre>
+        <aside class="notes">
+          Mention this is sample logic used in dashboards to compute simple QoQ growth.
+        </aside>
+      </section>
+
+      <!-- Closing slide -->
+      <section>
+        <h2>Thank you</h2>
+        <p>Contact: 23ds2000079@ds.study.iitm.ac.in</p>
+        <p>Questions?</p>
+        <aside class="notes">
+          Close with next steps and Q&A. Offer to share the repo & data extracts.
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- RevealJS + plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/highlight.js"></script>
+
+  <script>
+    // Initialize Reveal
+    Reveal.initialize({
+      hash: true,
+      plugins: [ RevealHighlight ],
+      slideNumber: true
+    });
+
+    // Initialize highlight.js (RevealHighlight plugin loads it but ensure)
+    if(window.hljs) {
+      document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+      });
+    }
+  </script>
+</body>
+</html>
