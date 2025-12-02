@@ -5,38 +5,93 @@
   <title>IITM TDS GA8 RevealJS Presentation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- RevealJS Core -->
+  <!-- Core reveal.js -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/theme/black.css">
 
-  <!-- Highlight.js -->
+  <!-- Highlight.js for code -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11/styles/default.min.css">
 
   <!-- MathJax -->
   <script>
     window.MathJax = {
-      tex: {inlineMath: [['\\(','\\)'], ['\\[','\\]']]}
+      tex: { inlineMath: [['\\(', '\\)'], ['\\[', '\\]']] }
     };
   </script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 
 <body>
-  <div class="reveal"> 
-    <div class="slides">
+<div class="reveal">
+  <div class="slides">
 
-      <!-- Slide 1 -->
-      <section>
-        <h2>Create an Interactive Technical Report with RevealJS</h2>
-        <p>Email: 23ds2000079@ds.study.iitm.ac.in</p>
-        <aside class="notes">Intro notes here.</aside>
-      </section>
+    <!-- Title -->
+    <section>
+      <h2>Create an Interactive Technical Report with RevealJS</h2>
+      <p>Email: 23ds2000079@ds.study.iitm.ac.in</p>
+      <aside class="notes">Intro notes here.</aside>
+    </section>
 
-      <!-- Markdown slide -->
-      <section data-markdown>
-        <textarea data-template>
+    <!-- MARKDOWN SLIDE -->
+    <section data-markdown>
+<textarea data-template>
 ## Markdown Slide
 - This slide is written in markdown
 - It satisfies the checker
 - Email: 23ds2000079@ds.study.iitm.ac.in
-        </textarea>
+</textarea>
+      <aside class="notes">Markdown notes here.</aside>
+    </section>
+
+    <!-- Fragments -->
+    <section>
+      <h3>Animated Points</h3>
+      <p class="fragment">First point</p>
+      <p class="fragment">Second point</p>
+      <p class="fragment">Third point</p>
+      <aside class="notes">Fragment notes.</aside>
+    </section>
+
+    <!-- Code -->
+    <section>
+      <h3>Code Example</h3>
+      <pre><code class="language-python">
+import pandas as pd
+print("Hello IITM")
+      </code></pre>
+      <aside class="notes">Code explanation notes.</aside>
+    </section>
+
+    <!-- Math -->
+    <section>
+      <h3>Financial Formula</h3>
+      <p>\( NPV = \sum_{t=0}^{N} \frac{C_t}{(1+r)^t} \)</p>
+      <aside class="notes">Math notes.</aside>
+    </section>
+
+  </div>
+</div>
+
+<!-- RevealJS core -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.js"></script>
+
+<!-- Correct plugin URLs -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/markdown/markdown.esm.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/highlight/highlight.esm.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/math/math.esm.js" type="module"></script>
+
+<!-- Initialization (MODULE MODE) -->
+<script type="module">
+  import Reveal from "https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.esm.js";
+  import RevealMarkdown from "https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/markdown/markdown.esm.js";
+  import RevealHighlight from "https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/highlight/highlight.esm.js";
+  import RevealMath from "https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/math/math.esm.js";
+
+  Reveal.initialize({
+    hash: true,
+    plugins: [ RevealMarkdown, RevealHighlight, RevealMath ]
+  });
+</script>
+
+</body>
+</html>
