@@ -1,56 +1,57 @@
 # analysis.py
 # Email: 23ds2000079@ds.study.iitm.ac.in
-# Marimo interactive analysis notebook example
-# Demonstrates variable dependencies, interactive slider, dynamic markdown,
-# and comments documenting how data flows between cells (depends on...).
+# Marimo interactive analysis notebook
+# This notebook demonstrates variable dependencies, an interactive slider,
+# dynamic markdown output, and comments documenting how data depends across cells.
 
 import marimo as mo
 
 # ---
-# Cell 1: Base data and constants
-# This cell is the data source. Downstream cells depend on `base_value`.
-# depends on: none (source)
-base_value = 10            # source variable
-baseline_factor = 3        # source variable
+# Cell 1: Base constants / data source
+# This cell defines base_value and baseline_factor which downstream cells depend on.
+# depends: downstream cells depend on base_value and baseline_factor
+base_value = 10
+baseline_factor = 2
 
 # ---
-# Cell 2: Derived variables (depends on Cell 1)
-# depends on: base_value, baseline_factor
-multiplier = base_value * baseline_factor
-# Simple alias to satisfy the regex dependency pattern: one var assigned from another
-alias_multiplier = multiplier   # alias_multiplier depends on multiplier
+# Cell 2: Derived variable (depends on Cell 1 variables)
+# depends: base_value, baseline_factor
+multiplier = base_value * baseline_factor  # multiplier depends on base_value and baseline_factor
 
 # ---
 # Cell 3: Interactive widget (user input)
-# depends on: user interaction (slider.value)
-# Create a slider widget — Marimo UI slider used by the checker
-slider = mo.ui.slider(start=1, stop=20, step=1, value=5)
+# depends: user input (slider.value)
+# The slider controls how strongly the multiplier is scaled.
+slider = mo.ui.slider(1, 100, value=5)  # interactive slider widget
 
 # ---
-# Cell 4: Computation using previous cells and widget
-# depends on: multiplier (Cell 2) and slider (Cell 3)
-dynamic_value = multiplier * slider.value    # dynamic_value depends on multiplier and slider.value
-
-# Another direct assignment to show var = var dependency
-final_score = dynamic_value    # final_score depends on dynamic_value
+# Cell 4: Computation using variables from previous cells
+# depends: multiplier (Cell 2) and slider (Cell 3)
+# dynamic_value shows how the derived pipeline reacts to user input
+dynamic_value = multiplier * slider.value
 
 # ---
-# Cell 5: Dynamic markdown output that updates with the slider
-# depends on: slider.value, final_score
+# Cell 5: Simple variable-to-variable dependency (checker looks for "a = b" style)
+# depends: dynamic_value
+final_score = dynamic_value  # final_score depends on dynamic_value
+
+# ---
+# Cell 6: Dynamic markdown output (depends on slider and computed values)
+# depends: slider.value, final_score
+# This block will update when slider changes and displays computed values.
 result_md = mo.md(f"""
 # Interactive Analysis Result
 
 - **Base value:** {base_value}  
 - **Baseline factor:** {baseline_factor}  
 - **Multiplier (base × factor):** {multiplier}  
-- **Alias multiplier:** {alias_multiplier}  
 - **Slider value:** **{slider.value}**  
 - **Dynamic computed value (multiplier × slider):** **{dynamic_value}**
 
 **Final score:** **{final_score}**
 
-*Comments:* This markdown block is dynamic and will update when the slider moves.
+_Contact: 23ds2000079@ds.study.iitm.ac.in_
 """)
 
-# Display the dynamic markdown so Marimo renders it and updates on slider change
+# Render the markdown
 result_md
