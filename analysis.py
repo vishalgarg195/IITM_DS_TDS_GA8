@@ -1,68 +1,60 @@
-# Contact email: 23ds2000079@ds.study.iitm.ac.in
-# Marimo interactive analysis notebook for IITM TDS GA8
+# ============================================================
+# IITM TDS GA8 - Marimo Interactive Notebook
+# Contact email (required by checker): 23ds2000079@ds.study.iitm.ac.in
+# ============================================================
 
 import marimo as mo
 
-# --- Cell 0: Required email cell (GA8 checker searches for visible output) ---
-mo.md("**Email: 23ds2000079@ds.study.iitm.ac.in**")
+# ------------------------------------------------------------
+# Cell 0: Show email in Markdown (GA8 requires visible output)
+# ------------------------------------------------------------
+email = "23ds2000079@ds.study.iitm.ac.in"   # <-- MUST be in raw file
+mo.md(f"**Email: {email}**")
 
-# IITM TDS GA8 - Required Email
-email = "23ds2000079@ds.study.iitm.ac.in"
-
-"""
-23ds2000079@ds.study.iitm.ac.in
-"""
-# 23ds2000079@ds.study.iitm.ac.in
-## 23ds2000079@ds.study.iitm.ac.in
-### 23ds2000079@ds.study.iitm.ac.in
-
-# -----------------------
-# Cell 1: Base variables
-# -----------------------
-# downstream cells depend on base_value and baseline_factor
+# ------------------------------------------------------------
+# Cell 1: Base variables (other cells depend on these)
+# ------------------------------------------------------------
+# depends on: base_value, baseline_factor
 base_value = 10
-baseline_factor = 2
+baseline_factor = 3   # simple starting factor
 
-# -----------------------
-# Cell 2: Derived variable
-# -----------------------
+# ------------------------------------------------------------
+# Cell 2: Derived computation
+# ------------------------------------------------------------
 # depends on: base_value, baseline_factor
 multiplier = base_value * baseline_factor
 
-# -----------------------
-# Cell 3: Interactive Widget
-# -----------------------
+# ------------------------------------------------------------
+# Cell 3: Interactive slider widget
+# ------------------------------------------------------------
 # depends on: user input
 slider = mo.ui.slider(1, 100, value=5)
 
-# -----------------------
-# Cell 4: Computation depending on slider + multiplier
-# -----------------------
+# ------------------------------------------------------------
+# Cell 4: Further derived value using slider + multiplier
+# ------------------------------------------------------------
 # depends on: slider.value, multiplier
-dynamic_value = multiplier * slider.value
+result_value = multiplier * slider.value
 
-# -----------------------
-# Cell 5: Simple variable dependency
-# -----------------------
-# depends on: dynamic_value
-final_score = dynamic_value
+# ------------------------------------------------------------
+# Cell 5: Final dependent variable
+# ------------------------------------------------------------
+# depends on: result_value
+final_score = result_value
 
-# -----------------------
+# ------------------------------------------------------------
 # Cell 6: Dynamic markdown output
-# -----------------------
+# ------------------------------------------------------------
 # depends on: slider.value, final_score
-output = mo.md(f"""
-# 📊 Interactive Data Analysis
+mo.md(f"""
+# 📊 Interactive Data Analysis (Marimo)
 
-- **Base value:** {base_value}  
-- **Baseline factor:** {baseline_factor}  
+- **Email:** {email}  
+- **Base Value:** {base_value}  
+- **Baseline Factor:** {baseline_factor}  
 - **Multiplier:** {multiplier}  
-- **Slider value:** {slider.value}  
-- **Dynamic value:** {dynamic_value}  
+- **Slider Value:** {slider.value}  
+- **Result Value:** {result_value}  
 
 ### ✅ Final Score = **{final_score}**
-
-Contact: 23ds2000079@ds.study.iitm.ac.in
 """)
-
-output
