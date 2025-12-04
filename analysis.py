@@ -3,6 +3,8 @@
 
 import marimo as mo
 
+# --- Cell 0: Required email cell (GA8 checker searches for visible output) ---
+mo.md("**Email: 23ds2000079@ds.study.iitm.ac.in**")
 # -----------------------
 # Cell 1: Base variables
 # -----------------------
