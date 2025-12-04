@@ -44,3 +44,34 @@ This repository includes the Python script and resulting image.
 
 ## 📁 Repository Contents
 
+
+
+# Beeswarm Plot — Employee Salary Distribution Analysis
+
+**Email:** 23ds2000079@ds.study.iitm.ac.in  
+**Visualization:** RAWGraphs Beeswarm Plot  
+**Business Context:** Pay equity & compensation analysis across departments
+
+## Overview
+This visualization analyzes employee salary distribution across different departments and experience levels. A Beeswarm Plot is used because it is ideal for displaying salary dispersion and identifying inequities that bar charts or pie charts cannot reveal.
+
+The data reflects realistic salary patterns for a large enterprise, where seniority and department significantly influence compensation.
+
+## Data Structure
+The dataset contains 20 rows with:
+- department (categorical)
+- level (categorical)
+- salary (continuous)
+
+This structure aligns perfectly with RAWGraphs Beeswarm Plot requirements.
+
+## Visualization Details
+- Created using **https://rawgraphs.io/**
+- Chart Type: **Beeswarm Plot**
+- Dimensions: **400 × 400 px**
+- Color encodes department; position encodes salary; grouping encodes experience level.
+- Exported as **chart.png**
+
+## Files
+- `chart.png` — RAWGraphs Beeswarm Plot  
+- `README.md` — Documentation and student email  
