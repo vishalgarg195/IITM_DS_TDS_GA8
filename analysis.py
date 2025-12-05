@@ -1,6 +1,6 @@
-# Email: 23ds2000079@ds.study.iitm.ac.in   # depends: this notebook documents dependencies
-
+# Email: 23ds2000079@ds.study.iitm.ac.in
 import marimo as mo
+# Email: 23ds2000079@ds.study.iitm.ac.in
 
 # --- Cell 1 ---
 # Base variable (other cells depend on this)
