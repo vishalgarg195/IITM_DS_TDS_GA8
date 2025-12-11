@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Demo Page</title>
+</head>
+<body>
+
+<h2>Quiz Q912 — Data Processing</h2>
+
+<div id="result">
+    Q912. Download the file at the link provided below.
+    <br><br>
+
+    <a href="https://example-files.online-convert.com/document/csv/example.csv">
+        Click here to download data file
+    </a>
+
+    <br><br>
+
+    Compute the sum of the column "value" on page 1 of this file.
+    Then return your answer as a JSON object:
+    <br><br>
+
+    {
+        "answer": the_sum
+    }
+
+    <br><br>
+
+    <!-- Simulated base64 block (decoded via JS in real IITM pages) -->
+    <script>
+        document.querySelector("#result").innerHTML += "<br><br>Base64 Block: <br>" + atob("U2FtcGxlIGJhc2U2NCBkYXRhIGJsb2NrLg==");
+    </script>
+</div>
+
+</body>
+</html>
